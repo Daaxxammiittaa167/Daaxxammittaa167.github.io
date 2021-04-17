@@ -1,0 +1,50 @@
+﻿{% extends "paginaMaestra2.html" %}
+
+{% block content %}
+{% if pedidos %}
+<center>
+    {% for pedido in pedidos %}
+    <div class="productoOrden">
+        <h1 class="nom">Detalles del pedido realizado el: {{pedido.1}}</h1>
+        <p id="divisor">------------------------------</p>
+        <p>Número de pedido: {{pedido.0}}</p>
+        <p>Fecha de pedido: {{pedido.1}}</p>
+        <p>Lugar de entrega: {{pedido.2}}</p>
+        <p>Estatus de pedido: CONFIRMADO Y PAGADO</p>
+        <p>Total por pagar: {{pedido.3}}</p>
+        <p id="divisor">------------------------------</p>
+        <h2>Compraste</h2>
+        <label style="display:none;">
+            <input name="data" style="visibility:hidden;" value="{{pedido.0}}">
+        </label>
+        <input type="submit" onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+               target="_blank" onclick="javascript: fn_Detalles({{pedido.0}})" value="Detalle de la compra" />
+        <br />
+
+        <br />
+    </div>
+    {% endfor %}
+
+</center>
+
+<center>
+    <br><p id="divisor">------------------------------</p><br />
+    <h3>Gracias por tu compra</h3><br>
+    <p id="divisor">------------------------------</p>
+
+</center>
+{% else %}
+<center>
+    <br><p id="divisor">------------------------------</p><br />
+    <h2>No tienes pedidos</h2><br>
+    <p id="divisor">------------------------------</p>
+
+</center>
+{% endif %}
+<br />
+<br />
+<br />
+<br />
+
+
+{% endblock %}

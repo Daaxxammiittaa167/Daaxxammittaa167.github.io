@@ -1,0 +1,93 @@
+﻿{% extends "paginaMaestra3.html" %}
+
+{% block content %}
+
+{% for menu in menus %}
+<div class="container" style="background-color: #ce0b10;color: white;">
+
+    <form name="consultarmenu" action="actualizarMenu" method="post" enctype="multipart/form-data">
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Imagen del menú:</label>
+                <input name="imagen" type="file" value=""><br />
+                <img src="../static/utileria/imagenes/alimentos/{{menu.5}}" width="350px" height="250">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Codigo del menú: {{menu.0}}</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" name="txtIdmenu" size="20" value="{{menu.0}}" readonly="readonly">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Fecha del menú: {{menu.1}}</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="date" name="dateFechasirve" size="20" value="" required>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Precio del menú: {{menu.2}}</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="number" name="numPrecio" size="20" value="{{menu.2}}" required>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>
+                            Estatus del menú:
+                            {% if menu.3==1 %}
+                            Activo
+                            {% endif %}
+                            {% if menu.3!=1 %}
+                            Inactivo
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="col-lg-6">
+                        <select name="selectEstatus" value="Selecciona el tipo de estatus" required>
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Codigo de Oferta: {{menu.4}}</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <select name="selectOferta" value="">
+                            <option value="">Seleccionar Oferta</option>
+                            <!--Aqui consultaremos lasofertas para colocarlas en lista -->
+                            {% for oferta in ofertas %}
+                            <option value='{{oferta.0}}'>{{oferta.1}}</option>";
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="col-lg-2">
+                <input onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion" type="submit" value="Actualizar" name="actualizar" />
+                <br /><br />
+                <input onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion" type="submit" value="Eliminar" name="eliminar" />
+            </div>
+        </div>
+        <br />
+    </form>
+</div>
+    <br>
+    <hr>
+    {% endfor %}
+
+    {% endblock %}

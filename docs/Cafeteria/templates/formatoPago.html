@@ -1,0 +1,126 @@
+﻿<html>
+
+<body>
+
+
+    <center>
+
+        <img id="logo" src="/static/utileria/imagenes/contenido/logo.jpg">
+
+        <h3>FORMATO PARA PAGO DE PEDIDO</h3>
+        <p>---------------------------------------------------------------------</p>
+        <br>
+
+
+    </center>
+
+    <center>
+        ';
+
+        $re=mysqli_query($con,"select * from usuario inner join pedido on usuario.idusuario = pedido.idusuario where (usuario.idusuario = ".$_SESSION['iduser'].") and (idpedido = ".$_SESSION['lastID'].")")or die(mysqli_error());
+
+        while ($f=mysqli_fetch_array($re)) {
+
+        ?>
+        <center>
+            <table align="center" border=1 cellspacing=0 cellpadding=8 bordercolor="000000">
+                <tr>
+                    <td><center><b>No. de cliente:</b> <?php echo $f['idusuario'] ?></center></td>
+                    <td><center><b>Nombre:</b> <?php echo $f['nombrep'].' '.$f['apat'].' '.$f['amat'] ?></center></td>
+                </tr>
+                <tr>
+                    <td><center><b>No. de pedido:</b> <?php echo $f['idpedido'] ?></center></td>
+                    <td><center><b>Fecha de pedido:</b> <?php echo $f['fechapedido'] ?></center></td>
+                </tr>
+            </table>
+        </center>
+
+        <?php
+        }
+
+        /*$pe=mysqli_query($con,"select * from pedido where idpedido = ".$_SESSION['idpedidoformato'])or die(mysqli_error());
+
+        while ($g=mysqli_fetch_array($pe)) {
+        echo '<b>No. de pedido: </b>';
+        echo $g['idpedido'].'<br><br>';
+        echo 'Fecha pedido: ';
+        echo $g['fechapedido'].'<br><br>';
+        }*/
+
+
+        echo '<br><h3>- Detalles del pedido -</h3><br>';
+
+        $se=mysqli_query($con,"select * from pedido inner join conforma on pedido.idpedido = conforma.idpedido inner join menu on menu.idmenu =
+        conforma.idmenu where pedido.idpedido = ".$_SESSION['lastID'])or die(mysqli_error());
+        $total = 0.00;
+
+        ?>
+        <center>
+            <table align="center" border=1 cellspacing=0 cellpadding=8 bordercolor="000000">
+                <tr>
+                    <td><center><b>Menu</b></center></td>
+                    <td><center><b>Cantidad</b></center></td>
+                    <td><center><b>Precio unitario</b></center></td>
+                    <td><center><b>Total</b></center></td>
+                </tr>
+
+                <?php
+                while ($h=mysqli_fetch_array($se)) {
+
+                ?>
+
+                <tr>
+                    <td><center> <?php echo $h['fechasirve'] ?> </center></td>
+                    <td><center> <?php echo $h['cantidad'] ?> </center></td>
+                    <td><center> $<?php echo $h['precio_total'] ?> </center></td>
+                    <td><center> $<?php echo $h['precio_total']*$h['cantidad'] ?> </center></td>
+                </tr>
+
+
+                <?php
+
+                $total = $total + ($h['precio_total']*$h['cantidad']);
+                }
+
+                ?>
+
+            </table>
+        </center>
+
+        <?php
+        echo '<br><br>'	;
+        echo '<b>PRECIO TOTAL A PAGAR: </b>$'.$total.'<br>';
+
+        echo '<p>----------------------------------------------------</p>';
+
+        $consulta = "select YEAR(fechasirve), MONTH(fechasirve), DAY(fechasirve) from conforma inner join menu on conforma.idmenu =
+        menu.idmenu where conforma.idpedido = ".$_SESSION['lastID']." limit 1";
+
+        $exec = mysqli_query($con,$consulta);
+
+        ?>
+
+        <center>
+
+            <h2>Gracias por su compra</h2>
+
+            <p><b>NOTAS</b></p>
+
+            <p>*** Recuerde ir a pagar al establecimiento para que su pedido pueda ser procesado ***</p>
+
+
+
+            <?php
+
+            while ($f=mysqli_fetch_array($exec)) { echo '*** Tiene hasta el '.($f['DAY(fechasirve)']-1).'-'.$f['MONTH(fechasirve)'].'-'.$f['YEAR(fechasirve)'].' para pagar su pedido ***'; }
+
+            echo '
+        </center>';
+
+        ?>
+
+    </center>
+
+</body>
+
+</html>

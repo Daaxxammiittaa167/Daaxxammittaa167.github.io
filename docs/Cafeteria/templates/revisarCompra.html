@@ -1,0 +1,68 @@
+﻿{% extends "paginaMaestra2.html" %}
+
+{% block content %}
+
+<center>
+    <br>
+
+    <h1>Recuento de tu pedido</h1>
+    <h2>Comprarás:</h2>
+
+</center>
+
+<br>
+
+<div class="tablarec">
+    <center>
+        <table border="1" class="table-hover">
+            <tr>
+                <th class="tablarecuento2">Menú</th>
+                <th class="tablarecuento2">Cantidad</th>
+                <th class="tablarecuento2">Precio</th>
+                <th class="tablarecuento2">Subtotal</th>
+            </tr>
+            {% for pedido in pedidos %}
+            <tr>
+                <td class="tablarecuento"><center>{{ pedido.1 }}</center></td>
+                <td class="tablarecuento"><center>{{ pedido.9 }}</center></td>
+                <td class="tablarecuento"><center>${{ pedido.2 }}</center></td>
+                <td class="tablarecuento"><center>${{ pedido.2*pedido.9 }}</center></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br />
+        <span>Total a Pagar: $ {{total.0}}</span>
+    </center>
+
+</div>
+<br />
+<center>
+    <form name="formConfirmarCompra" action="compras" method="post">
+        <table>
+            <tr>
+                <td><label>Lugar de entrega: </label></td>
+                <td><input title="Escribe un lugar de entrega" type="text" name="txtEntrega" required /></td>
+            </tr>
+        </table>
+
+        <br>
+        <h3>Notas:</h3>
+        <div class="notas">
+            <p>* Recuerda que la fecha en que se te entregará cada menú es la especificada en el nombre del mismo.</p>
+            <p>* Por el momento no aceptamos pagos con tarjeta, por lo que no te pedimos información de ello. Estamos trabajando para aceptar ésta forma de pago.</p>
+        </div>
+        <br />
+        <input class="fomrmularioboton" type="submit" value="Enviar mi pedido" name="btnConfirmar" />
+    </form>
+</center>
+<br />
+<div>
+    <center>
+        <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion" href="carritoDeCompras">Editar mi pedido</a><br><br>
+    </center>
+
+</div>
+
+<br>
+
+{% endblock %}

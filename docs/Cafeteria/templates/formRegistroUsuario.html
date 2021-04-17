@@ -1,0 +1,106 @@
+﻿{% extends "paginaMaestra.html" %}
+{% block content %}
+
+<center>
+
+    <h2 class="nom">Registrate</h2><br>
+
+    <form name="formRegistrarCliente" action="registroUsuario" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label>Nombre:</label>
+                </td>
+                <td>
+                    <input type='text' class='textbox' name='txtNombre' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Apellido paterno:</label>
+                </td>
+                <td>
+                    <input type='text' class='textbox' name='txtApellidoP' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Apellido materno:</label>
+                </td>
+                <td>
+                    <input type='text' class='textbox' name='txtApellidoM' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Fecha de nacimiento:</label>
+                </td>
+                <td>
+                    <input type='date' class='textbox' name='txtFechaNac' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Teléfono:</label>
+                </td>
+                <td>
+                    <input type='text' class='textbox' name='txtTelefono' maxlength="10" onkeypress="return valida(event)" required>
+                </td>
+            </tr>
+            <script>
+                function valida(e) {
+                    tecla = (document.all) ? e.keyCode : e.which;
+
+                    if (tecla == 8) {
+                        return true;
+                    }
+
+                    patron = /[0-9]/;
+                    tecla_final = String.fromCharCode(tecla);
+                    return patron.test(tecla_final);
+                }
+            </script>
+            <tr>
+                <td>
+                    <label>Correo:</label>
+                </td>
+                <td>
+                    <input type='email' class='textbox' name='txtCorreo' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Contraseña:</label>
+                </td>
+                <td>
+                    <input type='password' class='textbox' name='passUsuario' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Repetir contraseña:</label>
+                </td>
+                <td>
+                    <input type='password' class='textbox' name='passUsuario2' required>
+                </td>
+            </tr>
+
+        </table>
+        <br><input class="fomrmularioboton" type='submit' value='Registrarme' name='btnRegistrar' class='button'>
+    </form>
+
+</center>
+
+<br>
+<br><center>
+    <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+       href="entrarTienda">Ya tengo cuenta. Iniciar sesión</a>
+</center>
+<br>
+<br>
+
+
+<br>
+<br>
+
+            {% endblock %}

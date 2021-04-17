@@ -1,0 +1,54 @@
+﻿{% extends "paginaMaestra.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-2">
+        <center>
+            <a href="javascript: history.go(-1)">
+                <img src="../static/utileria/imagenes/contenido/volver-flecha.png" alt="Regresar" />
+            </a>
+        </center>
+    </div>
+</div>
+
+<center><p id="divisor">--------------------------------------------------------------------------</p></center>
+
+
+
+
+<section>
+    {% for detalle in detalles %}
+    <br><center><span id="namemenu"> Menú: {{ detalle.1 }} </span></center>
+    <center>
+        <h2>Incluye:</h2>
+    </center>
+    {% for relacion in relaciones %}
+    <div class="producto2">
+        <center>
+            <img id="imgdetallesmenu" id="imgdetalles" src="/static/utileria/imagenes/alimentos/{{ relacion.7 }}"><br>
+            <span>{{ relacion.4 }}</span><br><br>
+            <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'"
+               href="detallesAlimento?id={{ relacion.1 }}&idMenu={{ relacion.0 }}">Ver detalles</a>
+        </center>
+    </div>
+    {% endfor %}
+</section>
+<center><span id="totalmenu"> Precio total del menú: ${{ detalle.2 }} </span></center>
+    {% endfor %}
+
+<div class="divoferta">
+    <!--<?php mysqli_query($con,"update menu set precio_total = $total where idmenu=".$_GET['id'])or die(mysqli_error()); ?>
+    <?php $ofer=mysqli_query($con,"select * from menu inner join oferta on menu.idoferta=oferta.idoferta where menu.idmenu=".$_GET['id'])or die(mysqli_error()); ?>
+    <?php $o=mysqli_fetch_array($ofer) ?>
+    <center>
+        <b><span>Ofertas para éste menú: </span></b><br>
+        <span><?php echo $o['nombreoferta'];?></span><br>
+        <span><?php echo $o['descripcionoferta'];?></span>
+    </center>-->
+</div>
+
+<br />
+    <br>
+
+    {% endblock %}

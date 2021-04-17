@@ -1,0 +1,29 @@
+﻿{% extends "paginaMaestra.html" %}
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-lg-2">
+        <center>
+            <a href="javascript: history.go(-1)">
+                <img src="../static/utileria/imagenes/contenido/volver-flecha.png" alt="Regresar" />
+            </a>
+        </center>
+    </div>
+</div>
+{% for detalle in detalles %}
+<section>
+    <center>
+        <b><span class="nomalimento">{{ detalle.2 }}</span></b><br><br><br>
+        <img id="imgdetalles" src="/static/utileria/imagenes/alimentos/{{ detalle.5 }}"><br>
+        <span>Precio individual: {{ detalle.1 }}</span><br><br>
+        <span>Descripción: {{ detalle.3 }}</span><br><br>
+        <span>Categoria: {{ detalle.8 }}</span><br><br>
+        <span>Cantidad servida: {{ detalle.6 }}</span><br><br>
+    </center>
+
+    {% endfor %}
+
+</section>
+{% endblock %}

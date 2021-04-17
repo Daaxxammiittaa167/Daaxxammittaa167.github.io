@@ -1,0 +1,32 @@
+﻿{% extends "paginaMaestra2.html" %}
+
+{% block content %}
+
+<h1 class="nom2">Compra exitosa</h1>
+<br>
+
+<h2>¡Gracias por tu pedido!</h2>
+<h3>Ahora, imprime el formato para pago, dirigete a la cafeteria y paga tu pedido para que lo puedas recibir.</h3>
+
+
+<br><center>
+    <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+       target="_blank" onclick="javascript:Infor({{pedido}})">Guardar formato de pago</a>
+</center>
+<br>
+<br>
+
+<br><center>
+    <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+       href="cerrarSesion">SALIR</a>
+</center>
+<br>
+<br>
+
+
+<br />
+<br />
+<br />
+<br />
+
+{% endblock %}

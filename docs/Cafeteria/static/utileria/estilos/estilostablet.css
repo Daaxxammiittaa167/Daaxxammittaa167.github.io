@@ -1,0 +1,136 @@
+
+.slider{
+	width: 80%;
+}
+
+.producto{
+	width: 45%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.1rem;
+	padding: 1%;
+	
+}
+
+.producto img{
+	width: 70%;
+	height: 60%;
+	margin:0 auto;
+	padding-bottom: 10px;
+}
+
+.producto a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: #ffffff;
+	width: 80%;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+}
+
+.fomrmularioinicio{
+	width: 40%;
+	height: 30px;
+	border:1px solid #ce0b10;
+	color:#000000;
+	font-size: 1em;
+}
+
+.fomrmularioboton{
+	width: 20%;
+	height: 30px;
+	font-weight: bolder;
+	border:1px solid #F79D00;
+	background-color: #F79D00;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.fomrmularioboton:hover{
+	background-color: #ce0b10;
+	cursor: pointer;
+}
+
+.botoneliminar{
+	width: 20%;
+	height: 35px;
+	font-weight: bolder;
+	border:1px solid red;
+	background-color: red;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.producto2{
+	width: 45%;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.1rem;
+	padding: 1%;
+}
+
+.producto2 img{
+	width: 80%;
+	margin:0 auto;
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+
+.producto2 a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: white;
+	width: 50%;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+}
+
+#imgdetalles{
+	width: 60%;
+	padding-bottom: 30px;
+}
+
+
+.productoOrden{
+	width: 30%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
+.productoOrden img{
+	width: 80%;
+	height: 50%;
+	margin:0 auto;
+	padding-bottom: 10px;
+}
+
+.productoOrden a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: #ffffff;
+	width: 50%;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	border-radius: 4px;
+}

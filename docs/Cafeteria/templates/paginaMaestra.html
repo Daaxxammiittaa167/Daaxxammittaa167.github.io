@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Cafetería JG</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='utileria/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/utileria/estilos/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/utileria/estilos/estilosphone.css" media="screen
+    and (max-width: 600px)" />
+    <link rel="stylesheet" type="text/css" href="/static/utileria/estilos/estilostablet.css" media="screen
+    and (min-width: 601px) and (max-width: 1100px)" />
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='utileria/imagenes/contenido/icon.ico') }}" />
+</head>
+<body>
+    <nav class="menu">
+        <center>
+            <ul>
+                <li>
+                    <a href="/" title="Inicio">
+                        <img id="logo" src="/static/utileria/imagenes/contenido/logo.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="entrarTienda" title="ver carrito de compras">
+                        <img id="carrito" src="/static/utileria/imagenes/contenido/carrito.png">
+                    </a>
+                </li>
+            </ul>
+        </center>
+    </nav>
+
+    <nav class="index">
+        <center>
+            <ul>
+                <li><a onMouseOver="this.style.color='#F79D00'" onMouseOut="this.style.color='#858585'" href="acercaDe">Acerca de</a></li>
+                <li><a onMouseOver="this.style.color='#F79D00'" onMouseOut="this.style.color='#858585'" href="alimentos">Alimentos</a></li>
+                <li><a onMouseOver="this.style.color='#F79D00'" onMouseOut="this.style.color='#858585'" href="tiendaMenus">Comprar</a></li>
+                <li><a onMouseOver="this.style.color='#F79D00'" onMouseOut="this.style.color='#858585'" href="entrarTienda">Mi cuenta</a></li>
+            </ul>
+        </center>
+    </nav>
+    {% with messages = get_flashed_messages(category_filter=["correcto"]) %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show mensajes" role="alert" style="position:absolute; border-radius:10px; top:25px;left:75%;right:0;z-index:3;">
+        <strong>Advertencia: </strong> {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <script>
+        setTimeout(function () {
+            $(".mensajes").fadeOut(1500);
+        }, 3000);
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% with messages = get_flashed_messages(category_filter=["incorrecto"]) %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show mensajes" role="alert" style="position:absolute; border-radius:10px; top:25px;left:75%;right:0;z-index:3;">
+        <strong>Advertencia: </strong> {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <script>
+        setTimeout(function () {
+            $(".mensajes").fadeOut(1500);
+        }, 3000);
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %} {% endblock %}
+
+
+
+
+
+    <center>
+
+        <div class="final">
+
+            <footer>
+
+                <table class="finaltable">
+
+                    <tr class="finaltitle">
+                        <td>COMPRAR</td>
+                        <td class="finaltd">AYUDA</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="tiendaMenus">° Tienda</a></td>
+                        <td class="finaltd"><a href="contactanos"> Contactanos</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="entrarTienda">° Carrito</a></td>
+                        <td class="finaltd"><a href="pregFrecuentes"> Preguntas frecuentes</a></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td class="finaltd"><a href="entrarTienda"> Mi cuenta</a></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td class="finaltd"><a href="terminosUso"> Terminos de uso</a></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td class="finaltd"><a href="politicaPrivacidad"> Politica de privacidad</a></td>
+                    </tr>
+
+                </table>
+
+            </footer>
+
+        </div>
+
+        <p class="derechos"> 2021, Cafeteria JG. Todos los derechos reservados.<p>
+
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="../static/utileria/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/utileria/js/sistema.js"></script>
+    <script src="../static/utileria/js/jspdf.min.js"></script>
+    <script src="../static/utileria/js/pedidos.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.15/jspdf.plugin.autotable.js></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.15/jspdf.plugin.autotable.src.js></script>
+</body>
+</html>

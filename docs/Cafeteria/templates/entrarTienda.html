@@ -1,0 +1,27 @@
+﻿{% extends "paginaMaestra.html" %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 justify-content-lg-center">
+            <center>
+                <h2 class="iniciosesion">Iniciar sesion</h2><br>
+                <form action="sesionTienda" method="post">
+                    <input class="fomrmularioinicio" type="email" name="correo" required placeholder=" Correo"><br><br>
+                    <input class="fomrmularioinicio" type="password" name="pass" required placeholder=" Contraseña"><br>
+                    <br>
+                    <input class="fomrmularioboton" type="submit" value="Entrar">
+                </form>
+            </center>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <br>
+        <br><center><a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion" href="formRegistroUsuario" title="Registrate">Registrate aquí</a></center>
+    </div>
+    <br>
+</div>
+{% endblock %}

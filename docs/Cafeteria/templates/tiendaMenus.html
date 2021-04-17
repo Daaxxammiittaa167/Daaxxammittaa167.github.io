@@ -1,0 +1,42 @@
+﻿{% if (bBandera==0) %}
+{% extends "paginaMaestra.html" %}
+{% endif %}
+{% if (bBandera==1) %}
+{% extends "paginaMaestra2.html" %}
+{% endif %}
+
+{% block content %}
+
+<center><p id="divisor">--------------------------------------------------------------------------</p></center>
+
+<center><p id="titletiendamenu">Menús disponibles</p></center>
+
+
+
+<section>
+
+    {% for menu in menus %}
+    <div class="producto">
+        <center>
+            <h3>Menú: {{ menu.1 }}</h3>
+            <img id="imgindex" src="/static/utileria/imagenes/alimentos/{{ menu.5 }}"><br>
+            <span>Precio: $ {{ menu.2 }}</span><br><br>
+            <a onMouseOver="this.style.color='#ce0b10'" onMouseOut="this.style.color='#ffffff'" id="detallesmenu"
+               href="detallesMenu?id={{ menu.0 }}">Ver detalles</a><br><br>
+            {% if (bBandera==1) %}
+            <center>
+                <a onMouseOver="this.style.color='#F79D00'" onMouseOut="this.style.color='#ffffff'" id="menucarrito"
+                   href="carritoDeCompras?idMenu={{ menu.0 }}">Agregar a carrito</a>
+            </center>
+            {% endif %}
+        </center>
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<br>
+<br>
+
+    {% endblock %}

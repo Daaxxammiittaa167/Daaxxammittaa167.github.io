@@ -1,0 +1,132 @@
+﻿{% extends "paginaMaestra3.html" %}
+
+{% block content %}
+
+{% if pedidos %}
+<div class="container" style="color:white;">
+    {% for pedido in pedidos %}
+    <div class="productoval">
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Numero de pedido: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.0}}</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Fecha del pedido: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.1}}</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Lugar de entrega: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.2}}</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Total: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.3}}</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Estatus: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.4}}</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Cliente: </label>
+            </div>
+            <div class="col-lg-6">
+                <label>{{pedido.5}} {{pedido.6}} {{pedido.7}}</label>
+            </div>
+        </div>
+        <br />
+        {% set val=pedido[8] %}
+        <form name="formRegistroCli" action="modificarPedido" method="post" enctype="multipart/form-data">
+            <label style="display:none;">
+                <input name="data" style="visibility:hidden;" value="{{pedido.0}}">
+            </label>
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    {% if val==1 %}
+                    <button onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+                            target="_blank" name="procesar">
+                        Procesar compra
+                    </button>
+                    {% endif %}
+                    {% if val==3 %}
+                    <button onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+                            target="_blank" name="entregar">
+                        Entregar
+                    </button>
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    {% if val==1 %}
+                    <button onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+                            target="_blank" name="cancelar">
+                        Cancelar Compra
+                    </button>
+                    {% endif %}
+                    {% if val==5 %}
+                    <button onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+                            target="_blank" name="eliminar">
+                        Eliminar
+                    </button>
+                    {% endif %}
+                    {% if val==4 %}
+                    <button onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+                            target="_blank" name="eliminar">
+                        Eliminar
+                    </button>
+                    {% endif %}
+                </div>
+
+            </div>
+        </form>
+        <br />
+        <input type="submit" onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="sesion"
+               target="_blank" onclick="javascript: fn_Detalles({{pedido.0}})" value="Detalle del pedido" />
+        <br />
+        <hr />
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+<hr>
+{% else %}
+<center>
+    <br><p id="divisor">------------------------------</p><br />
+    <h2>No tienes pedidos</h2><br>
+    <p id="divisor">------------------------------</p>
+
+</center>
+
+<br/>
+<br />
+<br />
+{% endif %}
+
+    {% endblock %}

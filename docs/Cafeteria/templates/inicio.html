@@ -1,0 +1,45 @@
+﻿{% extends "paginaMaestra.html"%}
+{% block content %}
+
+<center>
+	<p class="bienvenido">Bienvenido </p>
+</center>
+
+
+<center>
+
+	<div class="slider">
+		<img class="slidepic" src="../static/utileria/imagenes/contenido/publicidad1.jpg" style="width:100%">
+		<img class="slidepic" src="../static/utileria/imagenes/contenido/publicidad2.jpg" style="width:100%">
+		<img class="slidepic" src="../static/utileria/imagenes/contenido/slider1.png" style="width:100%">
+		<img class="slidepic" src="../static/utileria/imagenes/contenido/publicidad5.jpg" style="width:100%">
+
+	</div>
+
+	<script>
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("slidepic");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > x.length) { myIndex = 1 }
+			x[myIndex - 1].style.display = "block";
+			setTimeout(carousel, 4000);
+		}
+	</script>
+
+</center>
+
+<br>
+<br>
+<center><p id="divisor">--------------------------------------------------------------------------</p></center>
+
+<br />
+
+
+{% endblock %}

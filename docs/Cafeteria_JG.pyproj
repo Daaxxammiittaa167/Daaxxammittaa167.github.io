@@ -1,0 +1,274 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d1a8ae5f-3502-4bad-a96c-04e5060f9d0c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>app.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>Cafeteria_JG</Name>
+    <RootNamespace>Cafeteria_JG</RootNamespace>
+    <InterpreterId>MSBuild|env_Cafeteria|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.py" />
+    <Compile Include="Cafeteria\modeloConexion\conexion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\cliente.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\configuration.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\inicioSesion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\pdfkit.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\modelo\source.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\vistas.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cafeteria\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cafeteria\modeloConexion\bd\Cafeteria.db" />
+    <Content Include="Cafeteria\static\javascripts\validarDatos.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Cafeteria\static\utileria\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Cafeteria\static\utileria\estilos\estilos.css" />
+    <Content Include="Cafeteria\static\utileria\estilos\estilosphone.css" />
+    <Content Include="Cafeteria\static\utileria\estilos\estilostablet.css" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\aguajamaica.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\carneasada.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\chilaquiles.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\costillaverde.JPG" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\enfrijoladas.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\flan.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\gelatinanuez.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\horchata.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\jugonaranja.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\limonchia.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\melon.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\mousse.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\panquemarmol.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\pasta.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\pastelnaranja.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\payqueso.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\pechugaasada.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\quesadillas.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\alimentos\refrescocola.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\carrito.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\facebook.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\icon.ico" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\instagram.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\logo.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad1.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad2.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad3.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad4.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad5.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad6.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\publicidad7.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider1.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider2.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider3.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider4.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider5.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider6.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\slider7.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\contenido\twitter.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menuscarneasada.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menuschilaquiles.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menuscostillaverde.JPG" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menusenfrijoladas.jpg" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menuspechugaasada.png" />
+    <Content Include="Cafeteria\static\utileria\imagenes\menusquesadillas.jpg" />
+    <Content Include="Cafeteria\static\utileria\js\jspdf.min.js" />
+    <Content Include="Cafeteria\static\utileria\js\pedidos.js" />
+    <Content Include="Cafeteria\static\utileria\js\sistema.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\bootstrap.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\bootstrap.min.js" />
+    <None Include="Cafeteria\static\utileria\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery-1.10.2.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery-1.10.2.min.map" />
+    <None Include="Cafeteria\static\utileria\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery.validate.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery.validate.min.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\modernizr-2.6.2.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\respond.js" />
+    <Content Include="Cafeteria\static\utileria\scripts\respond.min.js" />
+    <None Include="Cafeteria\static\utileria\scripts\_references.js" />
+    <Content Include="Cafeteria\templates\acercaDe.html" />
+    <Content Include="Cafeteria\templates\admin.html" />
+    <Content Include="Cafeteria\templates\alimentos.html" />
+    <Content Include="Cafeteria\templates\carritoDeCompras.html" />
+    <Content Include="Cafeteria\templates\compraExitosa.html" />
+    <Content Include="Cafeteria\templates\consultarMenu.html" />
+    <Content Include="Cafeteria\templates\consultarPedido.html" />
+    <Content Include="Cafeteria\templates\consultarPedidoNoPagado.html" />
+    <Content Include="Cafeteria\templates\contactanos.html" />
+    <Content Include="Cafeteria\templates\datosUsuario.html" />
+    <Content Include="Cafeteria\templates\detallesAlimento.html" />
+    <Content Include="Cafeteria\templates\detallesMenu.html" />
+    <Content Include="Cafeteria\templates\entrarTienda.html" />
+    <Content Include="Cafeteria\templates\formatoPago.html" />
+    <Content Include="Cafeteria\templates\formRegistroUsuario.html" />
+    <Content Include="Cafeteria\templates\inicio.html" />
+    <Content Include="Cafeteria\templates\paginaMaestra.html" />
+    <Content Include="Cafeteria\templates\paginaMaestra2.html" />
+    <Content Include="Cafeteria\templates\paginaMaestra3.html" />
+    <Content Include="Cafeteria\templates\pedidoCancelado.html" />
+    <Content Include="Cafeteria\templates\pedidoPagadoEntregado.html" />
+    <Content Include="Cafeteria\templates\pedidoPagadoNoEntregado.html" />
+    <Content Include="Cafeteria\templates\pedidosPendientes.html" />
+    <Content Include="Cafeteria\templates\politicaPrivacidad.html" />
+    <Content Include="Cafeteria\templates\pregFrecuentes.html" />
+    <Content Include="Cafeteria\templates\revisarCompra.html" />
+    <Content Include="Cafeteria\templates\terminosUso.html" />
+    <Content Include="Cafeteria\templates\tiendaMenus.html" />
+    <Content Include="Cafeteria\templates\usuario.html" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env_Cafeteria\">
+      <Id>env_Cafeteria</Id>
+      <Version>3.7</Version>
+      <Description>env_Cafeteria (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cafeteria\" />
+    <Folder Include="Cafeteria\modeloConexion\bd\" />
+    <Folder Include="Cafeteria\modelo\" />
+    <Folder Include="Cafeteria\modeloConexion\" />
+    <Folder Include="Cafeteria\static\" />
+    <Folder Include="Cafeteria\static\javascripts\" />
+    <Folder Include="Cafeteria\static\utileria\bootstrap\css\" />
+    <Folder Include="Cafeteria\static\utileria\bootstrap\js\" />
+    <Folder Include="Cafeteria\static\utileria\imagenes\alimentos\" />
+    <Folder Include="Cafeteria\static\utileria\imagenes\contenido\" />
+    <Folder Include="Cafeteria\static\utileria\js\" />
+    <Folder Include="Cafeteria\templates\" />
+    <Folder Include="Cafeteria\static\utileria\" />
+    <Folder Include="Cafeteria\static\utileria\estilos\" />
+    <Folder Include="Cafeteria\static\utileria\imagenes\" />
+    <Folder Include="Cafeteria\static\utileria\bootstrap\" />
+    <Folder Include="Cafeteria\static\utileria\scripts\" />
+    <Folder Include="Cafeteria\templates\inicio\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

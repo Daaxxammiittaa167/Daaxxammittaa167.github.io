@@ -1,0 +1,144 @@
+﻿{% extends "paginaMaestra2.html" %}
+
+{% block content %}
+<center><p id="divisor">--------------------------------------------------------------------------</p></center>
+<center>
+    <h1 class="nom">Mis datos</h1><br>
+</center>
+
+{% for user in usuario %}
+<center>
+    <p class="tagUser">Nombre:</p>
+    <p class="datosUser">{{ user.1 }} {{ user.2 }} {{ user.3 }}</p>
+    <p class="tagUser">Correo:</p>
+    <p class="datosUser">{{ user.7 }}</p>
+    <p class="tagUser">Telefono:</p>
+    <p class="datosUser">{{ user.5 }}</p>
+    <p class="tagUser">Fecha de nacimiento:</p>
+    <p class="datosUser">{{ user.4 }}</p><br><br>
+
+</center>
+{% endfor %}
+
+
+<center>
+    <button type="button" onclick="document.getElementById('dialogDatos').style.display = 'block';" class="editar">
+        Editar mis datos
+    </button>
+</center>
+
+<div id="dialogDatos" class="w3-modal">
+    <div class="w3-modal-content">
+
+        <header class="w3-container" style="background-color: #ce0b10;color:white;">
+            <span onclick="document.getElementById('dialogDatos').style.display='none'"
+                  class="w3-button w3-display-topright">&times;</span>
+            <h2>Editar mis datos</h2>
+        </header>
+
+        <div class="w3-container">
+            <center>
+
+                <center>
+                    {% for user in usuario %}
+                    <form name="formDatosCliente" action="formDatosCliente" method="post">
+                        <table>
+                            <tr>
+                                <td class="labeleditar">
+                                    Nombre:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="text" value="{{ user.1 }}" name="txtNombre">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labeleditar">
+                                    Apellido paterno:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="text" value="{{ user.2 }}" name="txtApellidoP">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labeleditar">
+                                    Apellido materno:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="text" value="{{ user.3 }}" name="txtApellidoM">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labeleditar">
+                                    Correo:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="text" value="{{ user.7 }}" name="txtCorreo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labeleditar">
+                                    Fecha de Nacimiento:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="date" value="{{ user.4 }}" name="txtFechaNac">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labeleditar">
+                                    Teléfono:
+                                </td>
+                                <td>
+                                    <input class="datoeditar" type="text" value="{{ user.5 }}" name="txtTelefono" maxlength="10" onkeypress="return valida(event)">
+                                </td>
+                            </tr>
+                            <script>
+                                function valida(e) {
+                                    tecla = (document.all) ? e.keyCode : e.which;
+
+                                    if (tecla == 8) {
+                                        return true;
+                                    }
+
+                                    patron = /[0-9]/;
+                                    tecla_final = String.fromCharCode(tecla);
+                                    return patron.test(tecla_final);
+                                }
+                            </script>
+                        </table>
+
+                        <br><input class="buttonform" type='submit' value='Cambiar' class='button' name='btnCambiar'>
+                        <br />
+
+                    </form>
+                    {% endfor %}
+
+                </center>
+            </center>
+
+        </div>
+
+        <footer class="w3-container" style="background-color: #ce0b10;color:white;">
+            <center>
+                <p>Cafeterias JG </p>
+            </center>
+        </footer>
+
+    </div>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('dialogDatos');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+<br />
+<br />
+
+{% endblock %}

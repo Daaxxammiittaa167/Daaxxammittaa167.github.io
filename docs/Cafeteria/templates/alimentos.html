@@ -1,0 +1,36 @@
+﻿{% if (bBandera==0) %}
+{% extends "paginaMaestra.html" %}
+{% endif %}
+{% if (bBandera==1) %}
+{% extends "paginaMaestra2.html" %}
+{% endif %}
+
+{% block content %}
+
+
+<center>
+    <p id="divisor">--------------------------------------------------------------------------</p>
+
+    <h1 class="nom">Nuestros alimentos</h1>
+</center>
+
+
+
+<section>
+    {% for alimento in alimentos %}
+    <div class="producto">
+        <center>
+            <p class="nomalimento">{{ alimento.2 }}</p>
+            <img id="imgindex" src="/static/utileria/imagenes/alimentos/{{ alimento.5 }}" width="900" height="500">
+            <p class="descalimento">{{ alimento.3 }}</p>
+        </center>
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<br>
+<br>
+
+    {% endblock %}

@@ -1,0 +1,66 @@
+﻿{% extends "paginaMaestra2.html" %}
+
+{% block content %}
+
+{% for carrito in carritos %}
+<div class="producto">
+    <center>
+        <h3>Menú: {{ carrito.1 }}</h3>
+        <img src="../static/utileria/imagenes/alimentos/{{ carrito.5 }}"><br>
+        <span>Precio: ${{ carrito.2 }}</span><br>
+        <span>
+            Cantidad:
+            <form name="formAgregarCantidad" action="carritoDeCompras" method="post">
+                <label style="display:none;">
+                    <input name="data" style="visibility:hidden;" value="{{carrito.6}}">
+                </label>
+                <div class="row">
+                    <div class="col-lg-3 text-center">
+                        <!-- <button class="btn btn-info" onclick="javascript: fnAccion(2)">-</button>-->
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <input name="cantidad" type="text" value="{{ carrito.9 }}"
+                               data-precio="{{ carrito.2 }}"
+                               data-id="{{ carrito.6 }}"
+                               class="cantidad" style="width:35px;" id="cant">
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <!--<button class="btn btn-info" onclick="javascript:fnAccion(1)">+</button>-->
+                    </div>
+                </div><br />
+                <button type="submit" name="guardar" class="btn btn-info"><span class="fa-plus-square-o">Guardar</span></button>
+
+                <br>
+                <span class="subtotal">Subtotal: ${{ carrito.9 * carrito.2 }}</span><br><br>
+                <button type="submit" name="eliminar" class="btn btn-warning"><span class="fa-plus-square-o">Eliminar</span></button>
+                <br />
+                <br />
+            </form>
+        </span>
+    </center>
+</div>
+{% endfor %}
+
+{% if result==1 %}
+<center><a href="revisarCompra" class="aceptar">Comprar</a></center>
+<br>
+<br>
+<center>
+    <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="vermenus"
+       href="tiendaMenus">Agregar más menús a mi carrito</a>
+</center>
+<br />
+{% endif %}
+{% if result==0 %}
+<center>
+    <h2>¡Aún no has añadido menús a tu carrito!</h2>
+</center>
+<br /><br />
+<center>
+    <a onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#ffffff'" class="vermenus"
+       href="tiendaMenus">Agregar menús a mi carrito</a>
+</center>
+<br /><br /><br /><br />
+{% endif %}
+
+{% endblock %}

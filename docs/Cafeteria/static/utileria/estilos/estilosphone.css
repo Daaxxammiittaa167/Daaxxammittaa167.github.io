@@ -1,0 +1,283 @@
+#logo{
+	width: 100px;
+}
+
+#carrito{
+	width: 100%;
+	background-color: #ce0b10;
+	width: 35px;
+	left: 85%;
+	display: inline-block;
+	vertical-align: top;
+	position: fixed;
+	z-index: 2;
+	padding-top: 20px;
+}
+
+.index ul li{
+	display: inline-block;
+	margin: 15px;
+}
+
+.index ul li a{
+	text-decoration: none;
+	color: #858585;
+	font-size: 1.5em;
+	font-style: none;
+}
+
+.slider{
+	width: 100%;
+}
+
+.producto{
+	width: 100%;
+	height: auto;
+	display: inline;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.1rem;
+	padding: 1%;
+	
+}
+
+.producto img{
+	width: 80%;
+	height: 50%;
+	margin:0 auto;
+	padding-bottom: 10px;
+}
+
+.producto a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: #ffffff;
+	width: 80%;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+}
+
+#divisor{
+	font-size: 0.5em;
+	color: #ce0b10;
+}
+
+.producto2{
+	width: 100%;
+	display: inline;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.1rem;
+	padding: 1%;
+}
+
+.producto2 img{
+	width: 80%;
+	height: 50%;
+	margin:0 auto;
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+
+.producto2 a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: white;
+	width: 50%;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+}
+
+#imgdetalles{
+	width: 85%;
+	padding-bottom: 30px;
+}
+
+.fomrmularioboton{
+	width: 50%;
+	height: 30px;
+	font-weight: bolder;
+	border:1px solid #F79D00;
+	background-color: #F79D00;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.fomrmularioboton:hover{
+	background-color: #ce0b10;
+	cursor: pointer;
+}
+
+.botoneliminar{
+	width: 20%;
+	height: 35px;
+	font-weight: bolder;
+	border:1px solid red;
+	background-color: red;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.fomrmularioinicio{
+	width: 90%;
+	height: 30px;
+	border:1px solid #ce0b10;
+	color:#000000;
+	font-size: 1em;
+}
+
+.pregfrec{
+	font-family: comforta;
+	font-size: 1em;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+.respfrec{
+	font-size: 1em;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+.notas{
+	font-size: 1em;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+.tablarec{
+	
+	width: 90%;
+}
+
+.import{
+	font-size: 1em;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+.botoneliminar{
+	width: 65%;
+	height: 35px;
+	font-weight: bolder;
+	border:1px solid red;
+	background-color: red;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.consultarorden{
+	width: 60%;
+	height: 30px;
+	font-weight: bolder;
+	border:1px solid #F79D00;
+	background-color: #F79D00;
+	color: #ffffff;
+	border-radius: 4px; 
+	font-family: quicksand;
+	font-size: 1.2em;
+}
+
+.consultarorden:hover{
+	background-color: #ce0b10;
+	cursor: pointer;
+}
+
+.productoOrden{
+	width: 100%;
+	height: auto;
+	display: inline;
+	vertical-align: top;
+	margin-left: 1%;
+	color: black;
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
+.productoOrden img{
+	width: 80%;
+	height: 50%;
+	margin:0 auto;
+	padding-bottom: 10px;
+}
+
+.productoOrden a{
+	background-color: #F79D00;
+	padding: 3px;
+	color: #ffffff;
+	width: 50%;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	border-radius: 4px;
+}
+
+#detallesmenuOrden{
+	background-color: #ce0b10;
+	padding: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 1rem;
+	margin-bottom: 30px;
+}
+
+
+.final{
+	background-color: #ce0b10;
+	padding-top: 10px;
+	padding-bottom: 12px;
+	font-family: quicksand;
+	font-size: 0.9em;
+	padding-left: 20px;
+}
+
+.finaltable{
+	border-collapse: collapse;
+	margin: 5px;
+}
+
+.finaltd {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.finaltable td{
+	padding-top: 5px;
+}
+
+.finaltitle{
+	font-family: coiny;
+	font-weight: normal;
+	font-size: 1em;
+	color: white;
+}
+
+.final a{
+	position: relative;
+	font-family: quicksand;
+	font-size: 0.9em;
+	color: #FFFFFF;
+}
+
+.textbox{
+	
+	width: 85%;
+}
